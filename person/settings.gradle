@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        maven {
+            url = 'https://nexus.infra.henrique.com/repository/maven-public/'
+            credentials {
+                username = 'henrique'
+                password = 'secret'
+            }
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            url = 'https://nexus.infra.henrique.com/repository/maven-public/'
+            credentials {
+                username = 'henrique'
+                password = 'secret'
+            }
+        }
+    }
+}
+
+rootProject.name = 'person'
+
+//include('app', 'model', 'repository', 'service', 'controller')
+include('model', 'repository', 'service', 'controller', 'app')

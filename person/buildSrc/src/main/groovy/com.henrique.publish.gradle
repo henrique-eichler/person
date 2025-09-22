@@ -1,0 +1,27 @@
+plugins {
+    id 'maven-publish'
+}
+
+ext {
+    nexusSnapshotUrl = 'https://nexus.infra.henrique.com/repository/maven-snapshots/'
+    nexusReleaseUrl = 'https://nexus.infra.henrique.com/repository/maven-releases/'
+    nexusUsername = 'henrique'
+    nexusPassword = 'secret'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = project.version.toString().endsWith('-SNAPSHOT') ? nexusSnapshotUrl : nexusReleaseUrl
+            credentials {
+                username = nexusUsername
+                password = nexusPassword
+            }
+        }
+    }
+}

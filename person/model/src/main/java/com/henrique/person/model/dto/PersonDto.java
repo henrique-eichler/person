@@ -1,0 +1,51 @@
+package com.henrique.person.model.dto;
+
+import com.henrique.person.model.entity.Person;
+
+public class PersonDto {
+
+    private Long id;
+    private String name;
+    private int age;
+
+    public PersonDto() {
+    }
+
+    public PersonDto(Long id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public static Person toEntity(PersonDto dto) {
+        return new  Person(dto.getId(), dto.getName(), dto.getAge());
+    }
+
+    public static PersonDto fromEntity(Person person) {
+        return new PersonDto(person.getId(), person.getName(), person.getAge());
+    }
+}

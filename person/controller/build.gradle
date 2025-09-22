@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+    id 'com.henrique.publish'
+}
+
+dependencies {
+    api project(':service')
+    api project(':model')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.5.5'
+}

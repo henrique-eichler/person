@@ -1,0 +1,13 @@
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+repositories {
+    maven {
+        url = 'https://nexus.infra.henrique.com/repository/maven-public/'
+        credentials {
+            username = 'henrique'
+            password = 'secret'
+        }
+    }
+}

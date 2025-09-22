@@ -1,0 +1,40 @@
+# Git ignore for Java/Gradle multi-module project with IntelliJ IDEA and common editors
+
+# Gradle caches and build outputs
+.gradle/
+build/
+# Also common build dirs used by other tools
+out/
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Java
+*.class
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files (keep example templates tracked)
+.env
+.env.*
+!.env.example
+
+# Node.js (frontend)
+node_modules/
+dist/

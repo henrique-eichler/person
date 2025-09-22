@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+tasks.register('printImageInfo') {
+    group = 'docker'
+    description = 'Prints PROJECT_NAME and PROJECT_VERION derived from project settings'
+    doLast {
+        println "PROJECT_NAME=${rootProject.name}"
+        println "PROJECT_VERSION=${project.version}"
+        println "PROJECT_PATH=${project.name}"
+    }
+}
