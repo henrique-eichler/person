@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eo pipefail
-source $HOME/Projects/tools/functions.sh
+source $(pwd)/functions.sh
 
 clear
 
