@@ -7,7 +7,7 @@ clear
 origin="$(whoami)@$(hostname -s)"
 sshKey="~/.ssh/id"
 
-scriptPaths="$(pwd)"
+scriptPaths="$(pwd#/home/$USER/)"
 
 # Define machines to sync with (excluding current machine later)
 machines=()
