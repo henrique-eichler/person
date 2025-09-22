@@ -7,13 +7,13 @@ clear
 origin="$(whoami)@$(hostname -s)"
 sshKey="~/.ssh/id"
 
+scriptPaths="$(pwd)"
+
 # Define machines to sync with (excluding current machine later)
 machines=()
 
 # Define $HOME-relative paths to sync
-paths=(
-  "$(pwd)"
-)
+paths=("$scriptPaths")
 
 read -p "Write the user and machine name (user@machine): " machine
 machines=("$machine")
