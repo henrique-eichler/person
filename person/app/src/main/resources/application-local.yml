@@ -1,0 +1,6 @@
+database:
+  url: jdbc:postgresql://postgres.infra.henrique.com:5432/persondb
+  username: person
+  password: personpwd
+  driver: org.postgresql.Driver
+  dialect: org.hibernate.dialect.PostgreSQLDialect

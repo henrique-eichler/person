@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { createPerson, deletePerson, listPersons, updatePerson } from '../api/personApi'
+import { createPerson, deletePerson, listPersons, updatePerson } from '../services/api/personApi'
 
 export default function PersonPage() {
   const [people, setPeople] = useState([])

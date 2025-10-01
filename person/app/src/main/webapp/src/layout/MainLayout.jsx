@@ -17,9 +17,10 @@ export default function MainLayout() {
                 <NavLink to="/person" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Person</NavLink>
               </li>
             </ul>
-            <div className="d-flex">
-              <button className="btn btn-outline-secondary" onClick={() => navigate('/login')}>Logout</button>
-            </div>
+              <div className="d-flex">
+                  <span className="badge bg-success">Connected</span>
+                  <button className="btn btn-outline-secondary" onClick={() => navigate('/login')}>Logout</button>
+              </div>
           </div>
         </div>
       </nav>

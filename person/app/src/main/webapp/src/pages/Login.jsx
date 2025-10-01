@@ -1,12 +1,8 @@
-import { useNavigate } from 'react-router-dom'
-
 export default function Login() {
-  const navigate = useNavigate()
-
   function handleLogin(e) {
     e.preventDefault()
-    // No auth, just navigate to the main page
-    navigate('/')
+    // Redirect to Spring Security's OAuth2 login for Keycloak
+    window.location.href = '/oauth2/authorization/keycloak'
   }
 
   return (
@@ -25,7 +21,7 @@ export default function Login() {
                   <label htmlFor="password" className="form-label">Password</label>
                   <input id="password" type="password" name="password" placeholder="Type anything" className="form-control" />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary">Login with Keycloak</button>
               </form>
             </div>
           </div>

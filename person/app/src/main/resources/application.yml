@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: person-app
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: person-app
+            # If your client is confidential, set client-secret via env or application-local.yml
+            authorization-grant-type: authorization_code
+            # Allow overriding redirect URI via env var OAUTH_REDIRECT_URI when needed (e.g., behind proxies)
+            redirect-uri: "${OAUTH_REDIRECT_URI:{baseUrl}/login/oauth2/code/{registrationId}}"
+            scope: openid, profile, email
+        provider:
+          keycloak:
+            issuer-uri: https://keycloak.infra.henrique.com/realms/person-realm
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.infra.henrique.com/realms/person-realm
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+server:
+  forward-headers-strategy: native
+
+database:
+#  url: jdbc:postgresql://postgres.infra.henrique.com:5432/persondb
+#  username: person
+#  password: personpwd
+  driver: org.postgresql.Driver
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+

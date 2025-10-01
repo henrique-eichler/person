@@ -1,0 +1,7 @@
+POST https://keycloak.infra.henrique.com/realms/person-realm/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=person-app&
+username=person-user&
+password=secret&
+grant_type=password

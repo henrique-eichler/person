@@ -66,29 +66,29 @@ Base path: /v1/person
   - Response: 200 OK with a number (long)
 
 Example curl commands:
-- Create: curl -i -X POST http://localhost:8080/v1/person -H "Content-Type: application/json" -d '{"name":"Alice","age":25}'
-- List: curl -i http://localhost:8080/v1/person
-- Get: curl -i http://localhost:8080/v1/person/1
-- Update: curl -i -X PUT http://localhost:8080/v1/person/1 -H "Content-Type: application/json" -d '{"name":"Alice","age":26}'
+- Create: curl -i -X POST   http://localhost:8080/v1/person -H "Content-Type: application/json" -d '{"name":"Alice","age":25}'
+- List:   curl -i -X GET    http://localhost:8080/v1/person
+- Get:    curl -i -X GET    http://localhost:8080/v1/person/1
+- Update: curl -i -X PUT    http://localhost:8080/v1/person/1 -H "Content-Type: application/json" -d '{"name":"Alice","age":26}'
 - Delete: curl -i -X DELETE http://localhost:8080/v1/person/1
-- Count: curl -i http://localhost:8080/v1/person/count
+- Count:  curl -i -X GET    http://localhost:8080/v1/person/count
 
 ## Environment configuration (Database)
 If you plan to connect this application to a PostgreSQL database, configure the following environment variables before starting the app:
 
-PERSON_DATABASE_URL=jdbc:postgresql://postgres.infra.henrique.com:5432/persondb
-PERSON_DATABASE_USERNAME=person
-PERSON_DATABASE_PASSWORD=personpwd
+DATABASE_URL=jdbc:postgresql://postgres.infra.henrique.com:5432/persondb
+DATABASE_USERNAME=person
+DATABASE_PASSWORD=personpwd
 
 How to set them:
 - Linux/macOS (temporary for the current shell):
-  - export PERSON_DATABASE_URL="jdbc:postgresql://postgres.infra.henrique.com:5432/persondb"
-  - export PERSON_DATABASE_USERNAME="person"
-  - export PERSON_DATABASE_PASSWORD="personpwd"
+  - export DATABASE_URL="jdbc:postgresql://postgres.infra.henrique.com:5432/persondb"
+  - export DATABASE_USERNAME="person"
+  - export DATABASE_PASSWORD="personpwd"
 - Windows (PowerShell):
-  - $env:PERSON_DATABASE_URL = "jdbc:postgresql://postgres.infra.henrique.com:5432/persondb"
-  - $env:PERSON_DATABASE_USERNAME = "person"
-  - $env:PERSON_DATABASE_PASSWORD = "personpwd"
+  - $env:DATABASE_URL = "jdbc:postgresql://postgres.infra.henrique.com:5432/persondb"
+  - $env:DATABASE_USERNAME = "person"
+  - $env:DATABASE_PASSWORD = "personpwd"
 
 Note: The application currently uses an in-memory repository. These variables are provided in advance to streamline future database integration and align with the properties found in app/src/main/resources/application.properties.
 
